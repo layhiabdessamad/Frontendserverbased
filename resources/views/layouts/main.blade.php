@@ -15,28 +15,38 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <link href="{{asset('css/sb-admin-2.min.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('css/sb-admin-2.min.css')}}">
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <!-- <script src="{{ asset('js/app.js') }}" defer></script> -->
 </head>
 
 <body id="page-top" class="font-sans antialiased" style="margin-top:0px;">
     <div class="min-h-screen bg-gray-100">
-        {{-- @include('layouts.navigation') --}}
-        <!-- Page Heading -->
-        <header class="bg-white shadow">
-            <div>
-                {{ $header }}
-            </div>
-        </header>
 
         <!-- Page Content -->
         <main>
-            {{ $slot }}
-        </main>
-    </div>
+            <div id="wrapper">
+                @include('layouts.dashboard_side_nav')
 
+                <!-- Content Wrapper -->
+                <div id="content-wrapper" class="d-flex flex-column">
+
+                    <!-- Main Content -->
+
+                    @include('layouts.dashboard_top_nav')
+                    <div id="content">
+
+                        <!-- Begin Page Content -->
+                        <div class="container-fluid">
+
+                            {{ $slot }}
+    @include('layouts.dashboard_footer')
+
+                            
+        </main>
+       
+    </div>
     <!-- Bootstrap core JavaScript-->
     <script src="{{asset('vendor/jquery/jquery.min.js')}}"></script>
     <script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>

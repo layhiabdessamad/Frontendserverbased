@@ -14,6 +14,7 @@ return [
     */
 
     'title' => 'Dashboard',
+    'search' => 'Search' ,
 
     
 
